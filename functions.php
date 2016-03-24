@@ -122,6 +122,8 @@ function mfi_insights_scripts() {
 
 	wp_enqueue_style('main-style',CSS.'main-style.css');
 
+	wp_enqueue_style('light-slider',CSS.'lightslider.css');
+
 	// Java Scripts
 
 	wp_enqueue_script('jquery-main',JS.'jquery-1.11.3.min.js',array(),'2016323',true);
@@ -133,6 +135,8 @@ function mfi_insights_scripts() {
 	wp_enqueue_script('horizontal-parallax', JS.'sequencejs-options.sliding-horizontal-parallax.js' ,array(), '2016323', true );
 
 	wp_enqueue_script('lightslider', JS.'lightslider.js' , array() , '2016323' , true );
+
+	wp_enqueue_script('site-js', JS.'site-js.js', array(), '2016324',true );
 
 	wp_enqueue_script( 'mfi-insights-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
 

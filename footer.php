@@ -34,7 +34,7 @@
 		</div>
 		<div class="col-md-4 last-child">
 			<div class="inner-wrap">
-				<img src="images/footer-logo.png" class="footer-logo" alt="IMF Insight footer" />
+				<img src="<?php print IMAGES; ?>/footer-logo.png" class="footer-logo" alt="IMF Insight footer" />
 			</div>
 			<div class="footer-social-icons">
 			        <a href="https://www.linkedin.com/company/10050711?trk=tyah&trkInfo=clickedVertical%3Acompany%2Cidx%3A1-1-1%2CtarId%3A1437291800057%2Ctas%3Amfi%20insight" target="blank"><i class="fa fa-linkedin"></i></a>
@@ -50,22 +50,6 @@
 </footer>
 
 <?php wp_footer(); ?>
-
-<script type="text/javascript">
-  WebFontConfig = {
-    google: { families: [ 'Anton::latin', 'Source+Sans+Pro:400,400italic,300,600:latin' ] }
-  };
-  (function() {
-    var wf = document.createElement('script');
-    wf.src = ('https:' == document.location.protocol ? 'https' : 'http') +
-      '://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js';
-    wf.type = 'text/javascript';
-    wf.async = 'true';
-    var s = document.getElementsByTagName('script')[0];
-    s.parentNode.insertBefore(wf, s);
-  })(); 
-  
-</script> 
 
 </body>
 </html>
