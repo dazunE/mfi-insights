@@ -188,6 +188,13 @@ require get_template_directory() . '/inc/extras.php';
  */
 require get_template_directory() . '/inc/customizer.php';
 
+
+/**
+ * Meta Boxes 
+ */
+
+include get_template_directory().'/inc/meta-box.php';
+
 /**
  * Load Jetpack compatibility file.
  */
