@@ -154,6 +154,131 @@ $meta_boxes[] = array(
 		),
 );
 
+$meta_boxes[] = array(
+
+		'id' => 'homepage-values',
+		'title' => __( 'Values', 'ninteen-options' ),
+		'pages' => array( 'page' ),
+		'context' => 'advanced',
+		'priority' => 'core',
+		'autosave' => true,
+		'fields' => array(
+
+
+			array(
+				'name'  => __( 'Section Title', 'ninteen-options' ),
+				'id'    => "{$prefix}value_section_title",
+				'type'  => 'text',
+				'std'   => __( 'Section Title', 'ninteen-options' ),
+			),
+
+
+			array(
+				'type' => 'heading',
+				'name' => __( 'Value 01', 'ninteen-options' ),
+			),
+			array(
+				'name'  => __( 'Value Title', 'ninteen-options' ),
+				'id'    => "{$prefix}value_1",
+				'type'  => 'text',
+				'std'   => __( 'Add value Title Here', 'ninteen-options' ),
+			),
+			array(
+				'name'             => __( 'Value Image', 'ninteen-options' ),
+				'id'               => "{$prefix}value_image_1",
+				'type'             => 'image_advanced',
+				'max_file_uploads' => 1,
+			),
+			array(
+				'name'    => __( 'Value Capation', 'your-prefix' ),
+				'id'      => "{$prefix}value_caption_1",
+				'type' => 'textarea',
+				'cols' => 20,
+				'rows' => 2,
+			),
+
+			array(
+				'type' => 'heading',
+				'name' => __( 'Value 02', 'ninteen-options' ),
+			),
+			array(
+				'name'  => __( 'Value Title', 'ninteen-options' ),
+				'id'    => "{$prefix}value_2",
+				'type'  => 'text',
+				'std'   => __( 'Add value Title Here', 'ninteen-options' ),
+			),
+			array(
+				'name'             => __( 'Value Image', 'ninteen-options' ),
+				'id'               => "{$prefix}value_image_2",
+				'type'             => 'image_advanced',
+				'max_file_uploads' => 1,
+			),
+			array(
+				'name'    => __( 'Value Capation', 'your-prefix' ),
+				'id'      => "{$prefix}value_caption_2",
+				'type' => 'textarea',
+				'cols' => 20,
+				'rows' => 2,
+			),
+
+			array(
+				'type' => 'heading',
+				'name' => __( 'Value 03', 'ninteen-options' ),
+			),
+
+		
+
+			array(
+				'name'  => __( 'Value Title', 'ninteen-options' ),
+				'id'    => "{$prefix}value_3",
+				'type'  => 'text',
+				'std'   => __( 'Add value Title Here', 'ninteen-options' ),
+			),
+			array(
+				'name'             => __( 'Value Image', 'ninteen-options' ),
+				'id'               => "{$prefix}value_image_3",
+				'type'             => 'image_advanced',
+				'max_file_uploads' => 1,
+			),
+			array(
+				'name'    => __( 'Value Capation', 'your-prefix' ),
+				'id'      => "{$prefix}value_caption_3",
+				'type' => 'textarea',
+				'cols' => 20,
+				'rows' => 2,
+			),
+
+			array(
+				'type' => 'heading',
+				'name' => __( 'Value 04', 'ninteen-options' ),
+			),
+			array(
+				'name'  => __( 'Value Title', 'ninteen-options' ),
+				'id'    => "{$prefix}value_4",
+				'type'  => 'text',
+				'std'   => __( 'Add value Title Here', 'ninteen-options' ),
+			),
+			array(
+				'name'             => __( 'Value Image', 'ninteen-options' ),
+				'id'               => "{$prefix}value_image_4",
+				'type'             => 'image_advanced',
+				'max_file_uploads' => 1,
+			),
+			array(
+				'name'    => __( 'Value Capation', 'your-prefix' ),
+				'id'      => "{$prefix}value_caption_4",
+				'type' => 'textarea',
+				'cols' => 20,
+				'rows' => 2,
+			),
+
+		),
+
+		'only_on'    => array(
+			//'slug'  => array( 'home' ),
+			'template' => array( 'home.php'),
+		),
+);
 
 /**
  * Register meta boxes
