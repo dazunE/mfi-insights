@@ -25,30 +25,127 @@ $meta_boxes[] = array(
 		'autosave' => true,
 		'fields' => array(
 
+
 			array(
-				'name'  => __( 'Slider Title 1', 'ninteen-options' ),
-				'id'    => "{$prefix}slider_i",
+				'type' => 'heading',
+				'name' => __( 'Slider 01', 'ninteen-options' ),
+			),
+			array(
+				'name'  => __( 'Slider Title', 'ninteen-options' ),
+				'id'    => "{$prefix}slider_1",
 				'type'  => 'text',
 				'std'   => __( 'Add Slider Title Here', 'ninteen-options' ),
 			),
 			array(
-				'name'  => __( 'Slider Title 2', 'ninteen-options' ),
-				'id'    => "{$prefix}slider_ii",
+				'name'             => __( 'Slider Image', 'ninteen-options' ),
+				'id'               => "{$prefix}slider_image_1",
+				'type'             => 'image_advanced',
+				'max_file_uploads' => 1,
+			),
+			array(
+				'name'             => __( 'Slider Banner Image', 'ninteen-options' ),
+				'id'               => "{$prefix}slider_banner_image_1",
+				'type'             => 'image_advanced',
+				'max_file_uploads' => 1,
+			),
+			array(
+				'name'    => __( 'Slider Capation', 'your-prefix' ),
+				'id'      => "{$prefix}slider_caption_1",
+				'type' => 'textarea',
+				'cols' => 20,
+				'rows' => 2,
+			),
+
+			array(
+				'type' => 'heading',
+				'name' => __( 'Slider 02', 'ninteen-options' ),
+			),
+			array(
+				'name'  => __( 'Slider Title', 'ninteen-options' ),
+				'id'    => "{$prefix}slider_2",
 				'type'  => 'text',
 				'std'   => __( 'Add Slider Title Here', 'ninteen-options' ),
 			),
 			array(
-				'name'  => __( 'Slider Title 3', 'ninteen-options' ),
-				'id'    => "{$prefix}slider_iii",
+				'name'             => __( 'Slider Image', 'ninteen-options' ),
+				'id'               => "{$prefix}slider_image_2",
+				'type'             => 'image_advanced',
+				'max_file_uploads' => 1,
+			),
+			array(
+				'name'             => __( 'Slider Banner Image', 'ninteen-options' ),
+				'id'               => "{$prefix}slider_banner_image_2",
+				'type'             => 'image_advanced',
+				'max_file_uploads' => 1,
+			),
+			array(
+				'name'    => __( 'Slider Capation', 'your-prefix' ),
+				'id'      => "{$prefix}slider_caption_2",
+				'type' => 'textarea',
+				'cols' => 20,
+				'rows' => 2,
+			),
+
+			array(
+				'type' => 'heading',
+				'name' => __( 'Slider 03', 'ninteen-options' ),
+			),
+			array(
+				'name'  => __( 'Slider Title', 'ninteen-options' ),
+				'id'    => "{$prefix}slider_3",
 				'type'  => 'text',
 				'std'   => __( 'Add Slider Title Here', 'ninteen-options' ),
 			),
 			array(
-				'name'  => __( 'Slider Title 4', 'ninteen-options' ),
-				'id'    => "{$prefix}slider_iv",
+				'name'             => __( 'Slider Image', 'ninteen-options' ),
+				'id'               => "{$prefix}slider_image_3",
+				'type'             => 'image_advanced',
+				'max_file_uploads' => 1,
+			),
+			array(
+				'name'             => __( 'Slider Banner Image', 'ninteen-options' ),
+				'id'               => "{$prefix}slider_banner_image_3",
+				'type'             => 'image_advanced',
+				'max_file_uploads' => 1,
+			),
+			array(
+				'name'    => __( 'Slider Capation', 'your-prefix' ),
+				'id'      => "{$prefix}slider_caption_3",
+				'type' => 'textarea',
+				'cols' => 20,
+				'rows' => 2,
+			),
+
+			array(
+				'type' => 'heading',
+				'name' => __( 'Slider 04', 'ninteen-options' ),
+			),
+			array(
+				'name'  => __( 'Slider Title', 'ninteen-options' ),
+				'id'    => "{$prefix}slider_4",
 				'type'  => 'text',
 				'std'   => __( 'Add Slider Title Here', 'ninteen-options' ),
 			),
+			array(
+				'name'             => __( 'Slider Image', 'ninteen-options' ),
+				'id'               => "{$prefix}slider_image_4",
+				'type'             => 'image_advanced',
+				'max_file_uploads' => 1,
+			),
+			array(
+				'name'             => __( 'Slider Banner Image', 'ninteen-options' ),
+				'id'               => "{$prefix}slider_banner_image_4",
+				'type'             => 'image_advanced',
+				'max_file_uploads' => 1,
+			),
+			array(
+				'name'    => __( 'Slider Capation', 'your-prefix' ),
+				'id'      => "{$prefix}slider_caption_4",
+				'type' => 'textarea',
+				'cols' => 20,
+				'rows' => 2,
+			),
+
 		),
 
 		'only_on'    => array(
