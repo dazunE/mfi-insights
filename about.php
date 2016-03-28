@@ -1,6 +1,6 @@
 <?php
 /**
- * Template Name: Home
+ * Template Name: About us
  * @author: Dasun Edirisinghe
  *
  * @link https://codex.wordpress.org/Template_Hierarchy
@@ -12,7 +12,7 @@ get_header();
 
 	while ( have_posts() ) { the_post() ;
 
-		get_template_part( 'template-parts/content', 'home' );
+		get_template_part( 'template-parts/content', 'about' );
 	}	
 	
 get_footer();

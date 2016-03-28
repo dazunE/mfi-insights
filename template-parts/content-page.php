@@ -9,33 +9,33 @@
 
 ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<header class="entry-header">
-		<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
-	</header><!-- .entry-header -->
+<div class="clearfix"></div>
+  
+<div class="our-services-section">
+      
+  <h2>Our Services</h2>
+<div class="container body-content">
+ 
+ <h3  class="header-underline-dull-blue">MFI Analytics provides various services for a <span class="sub-text">sustainable performance of MFIs.</span> </h3>
+ 
+  <div class="our-services-content">
 
-	<div class="entry-content">
-		<?php
-			the_content();
+<p>It offers <strong>project management</strong> and <strong>program management</strong> services that MFIs can take in order to run successful projects and programs. The service will cover different stages of a project life cycle starting from the inception till the project implementation keeping in consideration the time period, quality and output. </p>
+  
+<p>Besides this, it also delivers consultancy service for institutions regarding successful project implementation, future prospects and improvement of current operations. With international experience and connections, MFI Insight Analytics suits your business model and will support you in entering new markets to increase outreach and win new businesses. We offer both <strong>business consultancy</strong> and <strong>research consultancy</strong>. </p>
 
-			wp_link_pages( array(
-				'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'mfi-insights' ),
-				'after'  => '</div>',
-			) );
-		?>
-	</div><!-- .entry-content -->
+<p>If your organization wants to conduct a research for certain areas or study a topic, we can take care of the research and provide you with a complete report of outcomes in a suitable time period. We have the market knowledge and connections to help you reach your targets by focusing on markets that matter.</p>
 
-	<footer class="entry-footer">
-		<?php
-			edit_post_link(
-				sprintf(
-					/* translators: %s: Name of current post */
-					esc_html__( 'Edit %s', 'mfi-insights' ),
-					the_title( '<span class="screen-reader-text">"', '"</span>', false )
-				),
-				'<span class="edit-link">',
-				'</span>'
-			);
-		?>
-	</footer><!-- .entry-footer -->
-</article><!-- #post-## -->
+<p>Our services also include <strong>use cases</strong> that can enable us to address your business questions. The use cases can be adopted in different stages including planning system requirements, validating design, and software testing, Through use cases, we identify the various scenarios of your business along with goals and describe a basic course of action. Besides use case, we also provide <strong>data mining</strong> services to use large amounts of data and analyze it in order to find patterns and trends for future predictions. </p>
+<p>
+We also offer your <strong>agile methodology</strong> for project management that can enable you to respond to unpredictability through sprints.</p>
+
+
+
+  </div>
+  
+  
+  </div>
+  
+  
+   <div class="clearfix"></div>  
