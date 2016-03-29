@@ -188,14 +188,17 @@ function ninteen_post_type_display( $atts ){
 		 $atts = shortcode_atts( array(
 	      "type"     => false,
 	      "count"     => -1,
+	      "order" => false,
 		), $atts );
 
 
 			$args = array(
 
-				'post_type'   => $atts['type'],
-				'post_status' => 'publish',
-				'posts_per_page'         => $atts['count'],
+				'post_type'   	=> $atts['type'],
+				'post_status' 	=> 'publish',
+				'posts_per_page'=> $atts['count'],
+				'order'        	=> $atts['order'],
+				'orderby'       => 'date',
 				
 			);
 
@@ -233,7 +236,7 @@ function get_meta_data_singuler($meta_key) {
 function get_featured_image() {
 
 	if (has_post_thumbnail()) {
-		
+
 		$thumb_id = get_post_thumbnail_id();
 
 		$thumb_url_array = wp_get_attachment_image_src($thumb_id, 'thumbnail-size', true);

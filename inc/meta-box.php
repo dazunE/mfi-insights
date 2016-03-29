@@ -516,7 +516,7 @@ $meta_boxes[] = array(
 
 
 /*--------------------------------
-* 02 Member Post Type
+* 03 Member Post Type
 ----------------------------------*/ 
 
 $meta_boxes[] = array(
@@ -543,20 +543,20 @@ $meta_boxes[] = array(
 			),
 
 			array(
-				'name'  => __( 'Position', 'ninteen-options' ),
+				'name'  => __( 'Skype', 'ninteen-options' ),
 				'id'    => "{$prefix}member_skype",
 				'type'  => 'text',
 			),
 
 			array(
-				'name'  => __( 'Position', 'ninteen-options' ),
+				'name'  => __( 'E-mail', 'ninteen-options' ),
 				'id'    => "{$prefix}member_email",
 				'type'  => 'email',
 			),
 
 			array(
 				'name'    => __( 'Bio', 'ninteen-options' ),
-				'id'      => "{$prefix}timeline_content_1",
+				'id'      => "{$prefix}member_bio",
 				'type'    => 'wysiwyg',
 				// Set the 'raw' parameter to TRUE to prevent data being passed through wpautop() on save
 				'raw'     => false,
@@ -572,7 +572,7 @@ $meta_boxes[] = array(
 
 
 /*--------------------------------
-* 02 Member Post Type
+* 04 Careers
 ----------------------------------*/ 
 
 $meta_boxes[] = array(

@@ -51,6 +51,7 @@
 
     $('.member-readmore').click(function(){
         $('.member-description').removeClass('active');
+        $(this).addClass('active');
         $(this).parent().parent().find('.member-description').addClass('active');
     });
     
