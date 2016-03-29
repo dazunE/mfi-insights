@@ -280,6 +280,364 @@ $meta_boxes[] = array(
 		),
 );
 
+$meta_boxes[] = array(
+
+		'id' => 'homepage-tabs',
+		'title' => __( 'Tabs Section', 'ninteen-options' ),
+		'pages' => array( 'page' ),
+		'context' => 'advanced',
+		'priority' => 'core',
+		'autosave' => true,
+		'fields' => array(
+
+
+			array(
+				'name'  => __( 'Section Title', 'ninteen-options' ),
+				'id'    => "{$prefix}tabs_section_title",
+				'type'  => 'text',
+			),
+
+			array(
+				'name'  => __( 'Section Description', 'ninteen-options' ),
+				'id'    => "{$prefix}tabs_section_desc",
+				'type'  => 'textarea',
+				'std'   => __( 'Section Description', 'ninteen-options' ),
+			),
+
+
+			array(
+				'type' => 'heading',
+				'name' => __( 'Tab 01', 'ninteen-options' ),
+			),
+			array(
+				'name'  => __( 'Tab Title', 'ninteen-options' ),
+				'id'    => "{$prefix}tab_1",
+				'type'  => 'text',
+				'std'   => __( 'Add Tab Title Here', 'ninteen-options' ),
+			),
+			array(
+				'name'    => __( 'Tab Description', 'ninteen-options' ),
+				'id'      => "{$prefix}tab_desc_1",
+				'type' => 'textarea',
+				'cols' => 20,
+				'rows' => 2,
+			),
+
+			array(
+				'type' => 'heading',
+				'name' => __( 'Tab 02', 'ninteen-options' ),
+			),
+			array(
+				'name'  => __( 'Tab Title', 'ninteen-options' ),
+				'id'    => "{$prefix}tab_2",
+				'type'  => 'text',
+				'std'   => __( 'Add Tab Title Here', 'ninteen-options' ),
+			),
+			array(
+				'name'    => __( 'Tab Description', 'ninteen-options' ),
+				'id'      => "{$prefix}tab_desc_2",
+				'type' => 'textarea',
+				'cols' => 20,
+				'rows' => 2,
+			),
+
+			array(
+				'type' => 'heading',
+				'name' => __( 'Tab 03', 'ninteen-options' ),
+			),
+			array(
+				'name'  => __( 'Tab Title', 'ninteen-options' ),
+				'id'    => "{$prefix}tab_3",
+				'type'  => 'text',
+				'std'   => __( 'Add Tab Title Here', 'ninteen-options' ),
+			),
+			array(
+				'name'    => __( 'Tab Description', 'ninteen-options' ),
+				'id'      => "{$prefix}tab_desc_3",
+				'type' => 'textarea',
+				'cols' => 20,
+				'rows' => 2,
+			),
+
+			
+		),
+
+		'only_on'    => array(
+			//'slug'  => array( 'home' ),
+			'template' => array( 'home.php'),
+		),
+);
+
+$meta_boxes[] = array(
+
+		'id' => 'homepage-logos',
+		'title' => __( 'Patners', 'ninteen-options' ),
+		'pages' => array( 'page' ),
+		'context' => 'advanced',
+		'priority' => 'core',
+		'autosave' => true,
+		'fields' => array(
+
+
+			array(
+				'name'  => __( 'Section Title', 'ninteen-options' ),
+				'id'    => "{$prefix}value_section_title",
+				'type'  => 'text',
+				'std'   => __( 'Section Title', 'ninteen-options' ),
+			),
+
+
+			
+			array(
+				'name'             => __( 'Patners Images', 'ninteen-options' ),
+				'id'               => "{$prefix}patners_image_1",
+				'type'             => 'image_advanced',
+				'max_file_uploads' => 20,
+			),
+			array(
+				'name'    => __( 'Value Capation', 'your-prefix' ),
+				'id'      => "{$prefix}value_caption_1",
+				'type' => 'textarea',
+				'cols' => 20,
+				'rows' => 2,
+			),
+
+			),
+
+		'only_on'    => array(
+			//'slug'  => array( 'home' ),
+			'template' => array( 'home.php'),
+		),
+
+);
+
+/*--------------------------------
+* 02 About us Page
+----------------------------------*/ 
+
+$meta_boxes[] = array(
+
+		'id' => 'about-us',
+		'title' => __( 'Timeline Data', 'ninteen-options' ),
+		'pages' => array( 'page' ),
+		'context' => 'advanced',
+		'priority' => 'core',
+		'autosave' => true,
+		'fields' => array(
+
+
+			array(
+				'name'  => __( 'Section Title', 'ninteen-options' ),
+				'id'    => "{$prefix}timeline_section_title_1",
+				'type'  => 'text',
+			),
+
+			array(
+				'name'    => __( 'Section Content', 'ninteen-options' ),
+				'id'      => "{$prefix}timeline_content_1",
+				'type'    => 'wysiwyg',
+				// Set the 'raw' parameter to TRUE to prevent data being passed through wpautop() on save
+				'raw'     => false,
+				// Editor settings, see wp_editor() function: look4wp.com/wp_editor
+				'options' => array(
+					'textarea_rows' => 4,
+					'teeny'         => true,
+					'media_buttons' => false,
+				),
+			),
+
+			array(
+				'name'  => __( 'Section Title', 'ninteen-options' ),
+				'id'    => "{$prefix}timeline_section_title_2",
+				'type'  => 'text',
+			),
+
+			array(
+				'name'    => __( 'Section Content', 'ninteen-options' ),
+				'id'      => "{$prefix}timeline_content_2",
+				'type'    => 'wysiwyg',
+				// Set the 'raw' parameter to TRUE to prevent data being passed through wpautop() on save
+				'raw'     => false,
+				// Editor settings, see wp_editor() function: look4wp.com/wp_editor
+				'options' => array(
+					'textarea_rows' => 4,
+					'teeny'         => true,
+					'media_buttons' => false,
+				),
+			),
+
+			array(
+				'name'  => __( 'Section Title', 'ninteen-options' ),
+				'id'    => "{$prefix}timeline_section_title_3",
+				'type'  => 'text',
+			),
+
+			array(
+				'name'    => __( 'Section Content', 'ninteen-options' ),
+				'id'      => "{$prefix}timeline_content_3",
+				'type'    => 'wysiwyg',
+				// Set the 'raw' parameter to TRUE to prevent data being passed through wpautop() on save
+				'raw'     => false,
+				// Editor settings, see wp_editor() function: look4wp.com/wp_editor
+				'options' => array(
+					'textarea_rows' => 4,
+					'teeny'         => true,
+					'media_buttons' => false,
+				),
+			),
+
+			array(
+				'name'  => __( 'Section Title', 'ninteen-options' ),
+				'id'    => "{$prefix}timeline_section_title_4",
+				'type'  => 'text',
+			),
+
+			array(
+				'name'    => __( 'Section Content', 'ninteen-options' ),
+				'id'      => "{$prefix}timeline_content_4",
+				'type'    => 'wysiwyg',
+				// Set the 'raw' parameter to TRUE to prevent data being passed through wpautop() on save
+				'raw'     => false,
+				// Editor settings, see wp_editor() function: look4wp.com/wp_editor
+				'options' => array(
+					'textarea_rows' => 4,
+					'teeny'         => true,
+					'media_buttons' => false,
+				),
+			),
+
+		),
+
+		'only_on'    => array(
+			//'slug'  => array( 'home' ),
+			'template' => array( 'about.php'),
+		),
+);
+
+
+/*--------------------------------
+* 02 Member Post Type
+----------------------------------*/ 
+
+$meta_boxes[] = array(
+
+		'id' => 'member-data',
+		'title' => __( 'Member Data', 'ninteen-options' ),
+		'pages' => array( 'team' ),
+		'context' => 'advanced',
+		'priority' => 'core',
+		'autosave' => true,
+		'fields' => array(
+
+
+			array(
+				'name'  => __( 'Position', 'ninteen-options' ),
+				'id'    => "{$prefix}member_postition",
+				'type'  => 'text',
+			),
+
+			array(
+				'name'  => __( 'Linkdin', 'ninteen-options' ),
+				'id'    => "{$prefix}member_linkdin",
+				'type'  => 'text',
+			),
+
+			array(
+				'name'  => __( 'Position', 'ninteen-options' ),
+				'id'    => "{$prefix}member_skype",
+				'type'  => 'text',
+			),
+
+			array(
+				'name'  => __( 'Position', 'ninteen-options' ),
+				'id'    => "{$prefix}member_email",
+				'type'  => 'email',
+			),
+
+			array(
+				'name'    => __( 'Bio', 'ninteen-options' ),
+				'id'      => "{$prefix}timeline_content_1",
+				'type'    => 'wysiwyg',
+				// Set the 'raw' parameter to TRUE to prevent data being passed through wpautop() on save
+				'raw'     => false,
+				// Editor settings, see wp_editor() function: look4wp.com/wp_editor
+				'options' => array(
+					'textarea_rows' => 4,
+					'teeny'         => true,
+					'media_buttons' => false,
+				),
+			),
+		),
+);
+
+
+/*--------------------------------
+* 02 Member Post Type
+----------------------------------*/ 
+
+$meta_boxes[] = array(
+
+		'id' => 'career-data',
+		'title' => __( 'Career Details', 'ninteen-options' ),
+		'pages' => array( 'careers' ),
+		'context' => 'advanced',
+		'priority' => 'core',
+		'autosave' => true,
+		'fields' => array(
+
+
+			array(
+				'name'        => __( 'Color Theme', 'ninteen-options' ),
+				'id'          => "{$prefix}career_color_theme",
+				'type'        => 'select_advanced',
+				// Array of 'value' => 'Label' pairs for select box
+				'options'     => array(
+					'blue' => __( 'Blue', 'ninteen-options' ),
+					'green' => __( 'Green', 'ninteen-options' ),
+					'orange' => __( 'Orange' , 'ninteen-options' )
+				),
+				// Select multiple values, optional. Default is false.
+				'multiple'    => false,
+				// 'std'         => 'value2', // Default value, optional
+				'placeholder' => __( 'Select an Color', 'ninteen-options' ),
+			),
+
+
+			array(
+				'name'  => __( 'Short explanation', 'ninteen-options' ),
+				'id'    => "{$prefix}career_sub_title",
+				'type'  => 'text',
+			),
+
+			array(
+				'name'    => __( 'Responsibilities', 'ninteen-options' ),
+				'id'      => "{$prefix}career_responsibilities",
+				'type'    => 'wysiwyg',
+				// Set the 'raw' parameter to TRUE to prevent data being passed through wpautop() on save
+				'raw'     => false,
+				// Editor settings, see wp_editor() function: look4wp.com/wp_editor
+				'options' => array(
+					'textarea_rows' => 6,
+					'teeny'         => true,
+					'media_buttons' => false,
+				),
+			),
+
+			array(
+				'name'    => __( 'Ideal Qulaitification', 'ninteen-options' ),
+				'id'      => "{$prefix}career_qualifications",
+				'type'    => 'wysiwyg',
+				// Set the 'raw' parameter to TRUE to prevent data being passed through wpautop() on save
+				'raw'     => false,
+				// Editor settings, see wp_editor() function: look4wp.com/wp_editor
+				'options' => array(
+					'textarea_rows' => 6,
+					'teeny'         => true,
+					'media_buttons' => false,
+				),
+			),
+		),
+);
 /**
  * Register meta boxes
  * @return void

@@ -44,13 +44,14 @@
             ]
         });  
 
-
-    //
-
     $( ".highlights-panel-paragraph-more" ).click(function() {
         $( ".highlights-panel-paragraph" ).toggleClass( "active" );
         $(".highlights-panel-paragraph-more").hide();
     });
 
+    $('.member-readmore').click(function(){
+        $('.member-description').removeClass('active');
+        $(this).parent().parent().find('.member-description').addClass('active');
+    });
     
  });

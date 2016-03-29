@@ -43,7 +43,7 @@ h1, h2, h3, h4, h5, h6 {
 	margin-right: 10px;
 	font-size: 15px;
 }
-.mfi-menu li.active a {
+.mfi-menu li.current_page_item a {
 	color: #4c8399;
 }
 .mfi-menu .navbar-toggle .icon-bar {

@@ -41,19 +41,21 @@
       </button>
         <a class="navbar-brand" href="#"> <img src="images/mfi-logo.png" class="img-responsive" /></a>
     </div>
-    
-     <!-- Collect the nav links, forms, and other content for toggling -->
-    <div  class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <ul class="nav navbar-nav">
-  <li class="active"><a href="index.html"><span class="glyphicon glyphicon-home"> </span>Home</a></li>
-              <li><a href="about.html"><span class="glyphicon glyphicon-cog"> </span>About us</a></li>
-              <li><a href="services.html"><span class="glyphicon glyphicon-ok"> </span>Services</a></li>
-              <li><a href="solutions.html"><span class="glyphicon glyphicon-cloud"> </span>Solutions</a></li>
-              <li><a href="ourteam.html"><span class="glyphicon glyphicon-user"> </span>Meet Our Team</a></li>
-              <li><a href="careers.html"><span class="glyphicon glyphicon-hand-right"> </span>Careers</a></li>
-              <li><a href="contactus.php"><span class="glyphicon glyphicon-envelope"> </span>Contact</a></li>
-      </ul>
-    </div><!-- /.navbar-collapse -->
+
+
+    <?php
+            wp_nav_menu( array(
+                'menu'              => 'primary',
+                'theme_location'    => 'primary',
+                'depth'             => 2,
+                'container'         => 'div',
+                'container_class'   => 'collapse navbar-collapse',
+                'container_id'      => 'bs-example-navbar-collapse-1',
+                'menu_class'        => 'nav navbar-nav',
+                'fallback_cb'       => 'wp_bootstrap_navwalker::fallback',
+                'walker'            => new wp_bootstrap_navwalker())
+            );
+        ?>
 
 </nav>
 

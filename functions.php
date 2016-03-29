@@ -130,9 +130,13 @@ function mfi_insights_scripts() {
 
 	wp_enqueue_script('bootstrap',JS.'bootstrap.min.js',array(),'2016323',true);
 
+	if(is_page_template('home.php')) {
+
 	wp_enqueue_script('jquery.sequence', JS.'jquery.sequence-min.js', array() , '2016323' , true );
 
 	wp_enqueue_script('horizontal-parallax', JS.'sequencejs-options.sliding-horizontal-parallax.js' ,array(), '2016323', true );
+
+	}
 
 	wp_enqueue_script('lightslider', JS.'lightslider.js' , array() , '2016323' , true );
 
@@ -199,3 +203,4 @@ include get_template_directory().'/inc/meta-box.php';
  * Load Jetpack compatibility file.
  */
 require get_template_directory() . '/inc/jetpack.php';
+
