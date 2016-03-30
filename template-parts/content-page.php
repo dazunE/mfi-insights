@@ -11,7 +11,7 @@
 <div class="clearfix"></div>
 	<div class="our-services-section">
 		<h2><?php the_title();?></h2>
-		<div class="container body-content">
+		<div <?php post_class('container body-content'); ?> id="post-<?php the_ID(); ?>">
 		  <?php the_content( ); ?>
 		</div>
 	</div>

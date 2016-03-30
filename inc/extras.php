@@ -207,7 +207,11 @@ function ninteen_post_type_display( $atts ){
 
 		ob_start();
 
+		if($atts['type'] == 'team') {
+
 		echo '<div class="our-team container"><div class="analytics-team-details">';
+
+		}
 
 		if($query->have_posts()){
 			while($query->have_posts()){
@@ -218,7 +222,11 @@ function ninteen_post_type_display( $atts ){
 			}
 		}
 
+		if($atts['type'] == 'team') {
+
 		echo '</div></div>';
+
+		}
 
 		return ob_get_clean();
 		

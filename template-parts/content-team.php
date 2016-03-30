@@ -10,7 +10,7 @@ $user_email 	= get_meta_data_singuler( 'nineteen_member_email' );
 $user_bio		= get_meta_data_singuler( 'nineteen_member_bio');
 
 ?>
-<div class="parent">
+
 	<div class="member col-md-4">
 		<div class="member-image"><img src="<?php echo $user_image; ?>"></div>
 		<div class="member-titiles">
@@ -30,4 +30,3 @@ $user_bio		= get_meta_data_singuler( 'nineteen_member_bio');
 	<p>Frédéric is a graduate of <strong>EMBA from Ecole Nationale des Ponts et Chaussées, Generalist Engineer ESME Sudria, and also PMP certified from PMI, and ITILV3</strong>.
 	</p>
 	</div>
-</div>
