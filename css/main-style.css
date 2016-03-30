@@ -440,20 +440,20 @@ h1, h2, h3, h4, h5, h6 {
 	width: 70%;
 	cursor: pointer;
 }
-.job-listings .vacancy-alert {
+.page .vacancy-alert {
 	float: left;
 	margin-right: 2%;
 	width: 45%;
 }
-.job-listings .vacancy-alert h3 {
+.page .vacancy-alert h3 {
 	padding: 0;
 }
-.job-listings .vacancy-alert h3 a {
+.page .vacancy-alert h3 a {
 	display: block;
 	padding: 35px;
-	color: #fff;
+	color: #fff !important;
 }
-.job-listings .vacancy-alert .vacancy-content {
+.page .vacancy-alert .vacancy-content {
 	display: none;
 }
 .vacancy-alert.blue {
@@ -468,10 +468,11 @@ h1, h2, h3, h4, h5, h6 {
 .vacancy-alert h3 {
 	margin: 0;
 	padding: 35px;
-	color: #fff;
+	color: #fff !important;
 }
 .vacancy-alert h3 a {
 	text-decoration: none;
+	color: #fff !important;
 }
 .vacancy-alert h3 a:hover {
 	opacity: 0.8;
