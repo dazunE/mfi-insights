@@ -1,3 +1,10 @@
+<?php
+
+global $post;
+
+
+?>
+
 <!-- Main Slider -->
 
 <div id="sequence">
@@ -5,37 +12,18 @@
 	<span class="sequence-next glyphicon glyphicon-chevron-right" alt="Next"></span>
 
 	 <ul class="sequence-canvas">
-		 <li class="animate-in slider-set-1">
+
+         <?php for($i = 1 ; $i < 5 ; $i++) { ?>
+		 <li class="animate-in slider-set-<?php echo $i ;?>">
 		 	<div class="info">
-		 		<h2>The Proven Leader in Analytics</h2>
-		 		<p>MFI- Insight Analytics is powered by INES-IT.sprl (INtegrated & Efficient Solutions - IT), which is a Belgium based consultancy company. We deliver high quality BI and analytics solutions and services to financial institutions and specially Microfinance Institutions in order to improve their operational performance and increase probabilities of sustainability. </p>
+		 		<h2><?php echo get_meta_data_singuler( 'nineteen_slider_'.$i );?></h2>
+		 		<p><?php echo get_meta_data_singuler( 'nineteen_slider_'.$i );?></p>
 		  	</div>
 		 	<img class="sky" src="<?php print IMAGES; ?>/banners/banner-01.jpg" alt="Blue Sky" /> <img class="balloon" src="<?php print IMAGES; ?>/banners/banner-slider-parts-01.png" alt="Balloon" /> 
 		 </li>
 
-		 <li class="animate-in slider-set-1">
-		   <div class="info">
-		 	<h2>OUTREACH</h2>
-		 	<p>MFI- Insight Analytics is powered by INES-IT.sprl (INtegrated & Efficient Solutions - IT), which is a Belgium based consultancy company. We deliver high quality BI and analytics solutions and services to financial institutions and specially Microfinance Institutions in order to improve their operational performance and increase probabilities of sustainability. </p>
-		  </div>
-		 	<img class="sky" src="<?php print IMAGES; ?>/banners/banner-02.jpg" alt="Blue Sky" /> <img class="balloon" src="<?php print IMAGES; ?>/banners/banner-slider-parts-02.png" alt="Balloon" /> 
-		 </li>
+		 <?php } ?>
 
-		<li class="animate-in slider-set-1">
-		   <div class="info">
-		 	<h2>SERVICES</h2>
-		 	<p>Our services include program and project management for our clients, consultancy services including business and research consultancy. In addition, we have use cases, agile technology and data mining services that can provide a better understanding and a clear picture of your business.</p>
-		  </div>
-		 <img class="sky" src="<?php print IMAGES; ?>/banners/banner-03.jpg" alt="Blue Sky" /> <img class="balloon" src="<?php print IMAGES; ?>/banners/banner-slider-parts-03.png" alt="Balloon" /> 
-		 </li>
-
-		<li class="animate-in slider-set-1">
-		   <div class="info">
-		 	<h2>SOLUTIONS</h2>
-		 	<p>Our solutions provide our clients with enhanced portfolio management by monitoring their performance and operations. With the help of our solutions, MFIs and other financial institutions and are able to identify the problem areas enabling them to decrease their delinquency rates and improve performance and outreach.</p>
-		  </div>
-		 <img class="sky" src="<?php print IMAGES; ?>/banners/banner-04.jpg" alt="Blue Sky" /> <img class="balloon" src="<?php print IMAGES; ?>/banners/banner-slider-parts-04.png" alt="Balloon" /> 
-		 </li>
 	 </ul>
 </div>
 <div class="clearfix"></div>

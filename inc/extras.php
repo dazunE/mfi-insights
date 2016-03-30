@@ -229,9 +229,7 @@ function ninteen_post_type_display( $atts ){
 		}
 
 		return ob_get_clean();
-		
-
-	}
+}
 
 add_shortcode( 'data', 'ninteen_post_type_display' );
 
@@ -254,4 +252,16 @@ function get_featured_image() {
 		return $thumb_url;
 	}
 
+}
+
+
+function get_meta_image($meta_key) {
+
+$image_id = baloba_post_meta($meta_key);
+	if (isset($image_id)) {
+		$image_array = wp_get_attachment_image_src($image_id, 'thumbnail-size', true);
+		$image_url = $image_array[0];
+
+		return $image_url;
+	}
 }
