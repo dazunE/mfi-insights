@@ -179,7 +179,7 @@ function remove_editor_from_page(){
   }
 }
 
-add_action( 'init', 'remove_editor_from_page');
+//add_action( 'init', 'remove_editor_from_page');
 
 
 function ninteen_post_type_display( $atts ){
@@ -264,4 +264,38 @@ $image_id = baloba_post_meta($meta_key);
 
 		return $image_url;
 	}
+}
+
+function ninteen_slider_display(){
+
+	global $post;
+
+	echo '<ul class="sequence-canvas">';
+
+	for ( $i = 1 ; $i < 5 ; $i++ ) {
+
+		$data = '<li class="animate-in slider-set-'.$i.'">';
+		$data .= '<div class="info"><h2>'.get_meta_data_singuler( 'nineteen_slider_'.$i ).'</h2>';
+		$data .= '<p>'.get_meta_data_singuler( 'nineteen_slider_'.$i ).'</p></div>';
+		$data .= ''
+	}
+
+?>
+
+<ul class="sequence-canvas">
+
+         <?php for($i = 1 ; $i < 5 ; $i++) { ?>
+		 <li class="animate-in slider-set-<?php echo $i ;?>">
+		 	<div class="info">
+		 		<h2><?php echo get_meta_data_singuler( 'nineteen_slider_'.$i );?></h2>
+		 		<p><?php echo get_meta_data_singuler( 'nineteen_slider_'.$i );?></p>
+		  	</div>
+		 	<img class="sky" src="<?php print IMAGES; ?>/banners/banner-01.jpg" alt="Blue Sky" /> <img class="balloon" src="<?php print IMAGES; ?>/banners/banner-slider-parts-01.png" alt="Balloon" /> 
+		 </li>
+
+		 <?php } ?>
+
+	 </ul>
+
+<?php
 }
