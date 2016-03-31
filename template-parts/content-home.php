@@ -41,9 +41,7 @@ global $post;
 <div class="clearfix"></div>
 <div class="slider-panel-partners">
   <div class="container">
-    <h1 class="header-underline-dull-blue"><span>we have achieved</span>
-    <label> trust by the top global players.</label>
-    </h1>
+    <h1 class="header-underline-dull-blue"><?php echo get_meta_data_singuler( 'nineteen_patners_section_title' );?></h1>
     
     <!-- slider start -->
     

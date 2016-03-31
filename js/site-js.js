@@ -55,5 +55,10 @@
         $(this).addClass('active');
         $(this).parent().next('div').addClass('active');
     });
+
+   $('.featured-tabs a').click(function (e) {
+      e.preventDefault()
+      $(this).tab('show')
+    })
     
  });

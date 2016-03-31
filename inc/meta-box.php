@@ -204,7 +204,12 @@ $meta_boxes[] = array(
 				'cols' => 20,
 				'rows' => 2,
 			),
-		)
+		) ,
+
+	'only_on'    => array(
+			//'slug'  => array( 'home' ),
+			'template' => array( 'home.php'),
+		),
 
 
 );
@@ -433,6 +438,38 @@ $meta_boxes[] = array(
 					'teeny'         => true,
 					'media_buttons' => false,
 				),
+			),
+
+		),
+
+		'only_on'    => array(
+			//'slug'  => array( 'home' ),
+			'template' => array( 'about.php'),
+		),
+);
+
+$meta_boxes[] = array(
+
+		'id' => 'about-bottom',
+		'title' => __( 'Other Data', 'ninteen-options' ),
+		'pages' => array( 'page' ),
+		'context' => 'advanced',
+		'priority' => 'core',
+		'autosave' => true,
+		'fields' => array(
+
+
+			array(
+				'name'  => __( 'Bottom Section', 'ninteen-options' ),
+				'id'    => "{$prefix}bottom_section_title",
+				'type'  => 'text',
+			),
+
+			array(
+				'name'             => __( 'Bottom Image', 'ninteen-options' ),
+				'id'               => "{$prefix}bottom_section_image",
+				'type'             => 'image_advanced',
+				'max_file_uploads' => 1,
 			),
 
 		),

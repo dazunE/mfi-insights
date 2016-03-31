@@ -311,18 +311,23 @@ function ninteen_tabs_display(){
 	for ( $i = 1 ; $i < 4 ; $i ++ ) {
 
 		echo '<li role="presentation" class="'.($i == 1 ? 'active' : '').'"><span class="glyphicon glyphicon-arrow-down"></span>';
-    	echo '<a href="#tab'.$i.'" aria-controls="home" role="tab" data-toggle="tab">'.get_meta_data_singuler( 'nineteen_tab_'.$i).'</a></li>';
+    	echo '<a href="#tab'.$i.'" aria-controls="'.$i.'" role="tab" data-toggle="tab">'.get_meta_data_singuler( 'nineteen_tab_'.$i).'</a></li>';
 	}
 
 	echo '</ul></div><div class="tab-content">';
 
-	for ( $i =1 ; $i < 4 ; $i++ ) {
+	for ( $i = 1 ; $i < 4 ; $i ++ ) {
 
-		echo '<div role="tabpanel" class="tab-pane'.($i == 1 ? ' active' : '').'" id="#tab'.$i.'">';
-		echo '<h4>'.get_meta_data_singuler( 'nineteen_tab_'.$i).'</h4>';
-		echo '<p>'.get_meta_data_singuler( 'nineteen_tab_desc_'.$i).'</p></div>';
+	?>
+	
+	<div role="tabpanel" class="tab-pane fade <?php echo ($i == 1 ? 'active in' : '') ;?>" id="tab<?php echo $i ;?>">
+		<h4><?php echo get_meta_data_singuler( 'nineteen_tab_'.$i);?></h4>
+		<p><?php echo get_meta_data_singuler( 'nineteen_tab_desc_'.$i);?></p>
+	</div>
 
-	}
+  	<?php
+
+  	}
 
 	echo'</div></div>';
 }
@@ -345,5 +350,27 @@ function ninteen_patners_display( $before , $after ) {
 	}
 
 	echo $after;
+
+}
+
+function ninteen_timeline_display( $before , $after) {
+
+echo $before;
+
+?>
+
+<div class="timeline"></div>
+
+<?php for ( $i = 1; $i < 5 ; $i ++ ) { ?>
+
+  <div class="event major">
+    <h3><?php echo  get_meta_data_singuler( 'nineteen_timeline_section_title_'.$i );?></h3>
+    <div class="timeline-point"></div>
+    <?php echo get_meta_data_singuler( 'nineteen_timeline_content_'.$i);?>
+  </div>
+
+<?php }
+
+echo $after;
 
 }
