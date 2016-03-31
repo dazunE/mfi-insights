@@ -6,13 +6,20 @@
  * @author: Dasun Edirisinghe
  */
 
-$prefix = 'nineteen_';
-global $meta_boxes;
-$meta_boxes   = array();
 
 
+add_filter( 'rwmb_meta_boxes', 'ninteen_options_meta' );
+/**
+ * Register meta boxes
+ * @param $meta_boxes
+ * @return array
+ */
+function ninteen_options_meta( $meta_boxes )
+{
+	$prefix       = 'nineteen_';
+	
 
-/*-------------------------------------
+	/*-------------------------------------
 * 01 Home Page
 *-------------------------------------*/
 $meta_boxes[] = array(
@@ -156,14 +163,13 @@ $meta_boxes[] = array(
 
 $meta_boxes[] = array(
 
-		'id' => 'homepage-values',
-		'title' => __( 'Values', 'ninteen-options' ),
-		'pages' => array( 'page' ),
-		'context' => 'advanced',
-		'priority' => 'core',
-		'autosave' => true,
-		'fields' => array(
-
+	'id' => 'homepage-values',
+	'title' => __( 'Values', 'ninteen-options' ),
+	'pages' => array( 'page' ),
+	'context' => 'advanced',
+	'priority' => 'core',
+	'autosave' => true,
+	'fields' => array(
 
 			array(
 				'name'  => __( 'Section Title', 'ninteen-options' ),
@@ -172,112 +178,35 @@ $meta_boxes[] = array(
 				'std'   => __( 'Section Title', 'ninteen-options' ),
 			),
 
-
 			array(
 				'type' => 'heading',
 				'name' => __( 'Value 01', 'ninteen-options' ),
 			),
+
 			array(
 				'name'  => __( 'Value Title', 'ninteen-options' ),
-				'id'    => "{$prefix}value_1",
+				'id'    => "{$prefix}value_title_1",
 				'type'  => 'text',
-				'std'   => __( 'Add value Title Here', 'ninteen-options' ),
+				'std'   => __( 'Title', 'ninteen-options' ),
 			),
+
 			array(
-				'name'             => __( 'Value Image', 'ninteen-options' ),
+				'name'             => __( 'Image', 'ninteen-options' ),
 				'id'               => "{$prefix}value_image_1",
 				'type'             => 'image_advanced',
 				'max_file_uploads' => 1,
 			),
+
 			array(
-				'name'    => __( 'Value Capation', 'your-prefix' ),
-				'id'      => "{$prefix}value_caption_1",
+				'name'    => __( 'Capation', 'your-prefix' ),
+				'id'      => "{$prefix}value_description_1",
 				'type' => 'textarea',
 				'cols' => 20,
 				'rows' => 2,
 			),
+		)
 
-			array(
-				'type' => 'heading',
-				'name' => __( 'Value 02', 'ninteen-options' ),
-			),
-			array(
-				'name'  => __( 'Value Title', 'ninteen-options' ),
-				'id'    => "{$prefix}value_2",
-				'type'  => 'text',
-				'std'   => __( 'Add value Title Here', 'ninteen-options' ),
-			),
-			array(
-				'name'             => __( 'Value Image', 'ninteen-options' ),
-				'id'               => "{$prefix}value_image_2",
-				'type'             => 'image_advanced',
-				'max_file_uploads' => 1,
-			),
-			array(
-				'name'    => __( 'Value Capation', 'your-prefix' ),
-				'id'      => "{$prefix}value_caption_2",
-				'type' => 'textarea',
-				'cols' => 20,
-				'rows' => 2,
-			),
 
-			array(
-				'type' => 'heading',
-				'name' => __( 'Value 03', 'ninteen-options' ),
-			),
-
-		
-
-			array(
-				'name'  => __( 'Value Title', 'ninteen-options' ),
-				'id'    => "{$prefix}value_3",
-				'type'  => 'text',
-				'std'   => __( 'Add value Title Here', 'ninteen-options' ),
-			),
-			array(
-				'name'             => __( 'Value Image', 'ninteen-options' ),
-				'id'               => "{$prefix}value_image_3",
-				'type'             => 'image_advanced',
-				'max_file_uploads' => 1,
-			),
-			array(
-				'name'    => __( 'Value Capation', 'your-prefix' ),
-				'id'      => "{$prefix}value_caption_3",
-				'type' => 'textarea',
-				'cols' => 20,
-				'rows' => 2,
-			),
-
-			array(
-				'type' => 'heading',
-				'name' => __( 'Value 04', 'ninteen-options' ),
-			),
-			array(
-				'name'  => __( 'Value Title', 'ninteen-options' ),
-				'id'    => "{$prefix}value_4",
-				'type'  => 'text',
-				'std'   => __( 'Add value Title Here', 'ninteen-options' ),
-			),
-			array(
-				'name'             => __( 'Value Image', 'ninteen-options' ),
-				'id'               => "{$prefix}value_image_4",
-				'type'             => 'image_advanced',
-				'max_file_uploads' => 1,
-			),
-			array(
-				'name'    => __( 'Value Capation', 'your-prefix' ),
-				'id'      => "{$prefix}value_caption_4",
-				'type' => 'textarea',
-				'cols' => 20,
-				'rows' => 2,
-			),
-
-		),
-
-		'only_on'    => array(
-			//'slug'  => array( 'home' ),
-			'template' => array( 'home.php'),
-		),
 );
 
 $meta_boxes[] = array(
@@ -381,7 +310,7 @@ $meta_boxes[] = array(
 
 			array(
 				'name'  => __( 'Section Title', 'ninteen-options' ),
-				'id'    => "{$prefix}value_section_title",
+				'id'    => "{$prefix}patners_section_title",
 				'type'  => 'text',
 				'std'   => __( 'Section Title', 'ninteen-options' ),
 			),
@@ -638,84 +567,79 @@ $meta_boxes[] = array(
 			),
 		),
 );
-/**
- * Register meta boxes
- * @return void
- */
 
-function rw_register_meta_boxes()
-{
-	global $meta_boxes;
-
-	// Make sure there's no errors when the plugin is deactivated or during upgrade
-	if ( class_exists( 'RW_Meta_Box' ) ) {
-		foreach ( $meta_boxes as $meta_box ) {
-			if ( isset( $meta_box['only_on'] ) && ! rw_maybe_include( $meta_box['only_on'] ) ) {
-				continue;
-			}
-
-			new RW_Meta_Box( $meta_box );
+	foreach ( $meta_boxes as $k => $meta_box )
+	{
+		if ( isset( $meta_box['only_on'] ) && ! rw_maybe_include( $meta_box['only_on'] ) )
+		{
+			unset( $meta_boxes[$k] );
 		}
 	}
+	return $meta_boxes;
 }
-
-add_action( 'admin_init', 'rw_register_meta_boxes' );
-
 /**
  * Check if meta boxes is included
+ *
  * @return bool
  */
-function rw_maybe_include( $conditions ) {
-	// Include in back-end only
-	if ( ! defined( 'WP_ADMIN' ) || ! WP_ADMIN ) {
-		return false;
-	}
-
-	// Always include for ajax
-	if ( defined( 'DOING_AJAX' ) && DOING_AJAX ) {
+function rw_maybe_include( $conditions )
+{
+	// Always include in the frontend to make helper function work
+	if ( ! is_admin() )
+	{
 		return true;
 	}
-
-	if ( isset( $_GET['post'] ) ) {
+	// Always include for ajax
+	if ( defined( 'DOING_AJAX' ) && DOING_AJAX )
+	{
+		return true;
+	}
+	if ( isset( $_GET['post'] ) )
+	{
 		$post_id = intval( $_GET['post'] );
 	}
-	elseif ( isset( $_POST['post_ID'] ) ) {
+	elseif ( isset( $_POST['post_ID'] ) )
+	{
 		$post_id = intval( $_POST['post_ID'] );
 	}
-	else {
+	else
+	{
 		$post_id = false;
 	}
-
 	$post_id = (int) $post_id;
 	$post    = get_post( $post_id );
-
-	foreach ( $conditions as $cond => $v ) {
+	foreach ( $conditions as $cond => $v )
+	{
 		// Catch non-arrays too
-		if ( ! is_array( $v ) ) {
+		if ( ! is_array( $v ) )
+		{
 			$v = array( $v );
 		}
-
-		switch ( $cond ) {
+		switch ( $cond )
+		{
 			case 'id':
-				if ( in_array( $post_id, $v ) ) {
+				if ( in_array( $post_id, $v ) )
+				{
 					return true;
 				}
-			break;
+				break;
 			case 'parent':
 				$post_parent = $post->post_parent;
-				if ( in_array( $post_parent, $v ) ) {
+				if ( in_array( $post_parent, $v ) )
+				{
 					return true;
 				}
-			break;
+				break;
 			case 'slug':
 				$post_slug = $post->post_name;
-				if ( in_array( $post_slug, $v ) ) {
+				if ( in_array( $post_slug, $v ) )
+				{
 					return true;
 				}
-			break;
+				break;
 			case 'category': //post must be saved or published first
 				$categories = get_the_category( $post->ID );
-				$catslugs = array();
+				$catslugs   = array();
 				foreach ( $categories as $category )
 				{
 					array_push( $catslugs, $category->slug );
@@ -724,17 +648,16 @@ function rw_maybe_include( $conditions ) {
 				{
 					return true;
 				}
-			break;
+				break;
 			case 'template':
 				$template = get_post_meta( $post_id, '_wp_page_template', true );
 				if ( in_array( $template, $v ) )
 				{
 					return true;
 				}
-			break;
+				break;
 		}
 	}
-
 	// If no condition matched
 	return false;
 }

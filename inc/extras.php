@@ -257,45 +257,93 @@ function get_featured_image() {
 
 function get_meta_image($meta_key) {
 
-$image_id = baloba_post_meta($meta_key);
-	if (isset($image_id)) {
-		$image_array = wp_get_attachment_image_src($image_id, 'thumbnail-size', true);
-		$image_url = $image_array[0];
+	$image_id = get_meta_data_singuler($meta_key);
+		if (isset($image_id)) {
+			$image_array = wp_get_attachment_image_src($image_id, 'thumbnail-size', true);
+			$image_url = $image_array[0];
 
-		return $image_url;
-	}
+			return $image_url;
+		}
 }
 
-function ninteen_slider_display(){
+function ninteen_slider_display($before, $after){
 
 	global $post;
 
-	echo '<ul class="sequence-canvas">';
+	echo $before;
 
 	for ( $i = 1 ; $i < 5 ; $i++ ) {
 
-		$data = '<li class="animate-in slider-set-'.$i.'">';
-		$data .= '<div class="info"><h2>'.get_meta_data_singuler( 'nineteen_slider_'.$i ).'</h2>';
-		$data .= '<p>'.get_meta_data_singuler( 'nineteen_slider_'.$i ).'</p></div>';
-		$data .= ''
+	echo '<li class="animate-in slider-set-'.$i.'">';
+	echo '<div class="info"><h2>'.get_meta_data_singuler( 'nineteen_slider_'.$i ).'</h2>';
+	echo '<p>'.get_meta_data_singuler( 'nineteen_slider_'.$i ).'</p></div>';
+	echo '<img class="sky" src="'.get_meta_image('nineteen_slider_image_'.$i).'" alt="Blue Sky" />';
+	echo '<img class="balloon" src="'.get_meta_image('nineteen_slider_banner_image_'.$i).'" alt="Balloon"/>';
+	echo '</li>';
+
+
 	}
 
-?>
+	echo $after;
 
-<ul class="sequence-canvas">
+}
 
-         <?php for($i = 1 ; $i < 5 ; $i++) { ?>
-		 <li class="animate-in slider-set-<?php echo $i ;?>">
-		 	<div class="info">
-		 		<h2><?php echo get_meta_data_singuler( 'nineteen_slider_'.$i );?></h2>
-		 		<p><?php echo get_meta_data_singuler( 'nineteen_slider_'.$i );?></p>
-		  	</div>
-		 	<img class="sky" src="<?php print IMAGES; ?>/banners/banner-01.jpg" alt="Blue Sky" /> <img class="balloon" src="<?php print IMAGES; ?>/banners/banner-slider-parts-01.png" alt="Balloon" /> 
-		 </li>
 
-		 <?php } ?>
+function ninteen_value_display( ){
 
-	 </ul>
+	global $post;
 
-<?php
+	for ( $i = 1 ; $i < 5 ; $i++ ) {
+
+		echo '<div class="col-md-3 col-xs-12 highlights-panel section-0'.$i.'">';
+		echo '<img src="'.get_meta_image('nineteen_value_image_'.$i).'" class="featured-img" />';
+    	echo '<h3>'.get_meta_data_singuler('nineteen_value_title_'.$i).'</h3>';
+		echo '<p class="highlights-panel-paragraph">'.get_meta_data_singuler('nineteen_value_description_'.$i).'</p>';
+		echo '<span class="highlights-panel-paragraph-more  glyphicon glyphicon-chevron-right set-4-info-more"></span></div>';
+	}
+}
+
+
+function ninteen_tabs_display(){
+
+	echo '<div role="tabpanel"><ul class="nav nav-tabs featured-tabs" role="tablist">';
+
+	for ( $i = 1 ; $i < 4 ; $i ++ ) {
+
+		echo '<li role="presentation" class="'.($i == 1 ? 'active' : '').'"><span class="glyphicon glyphicon-arrow-down"></span>';
+    	echo '<a href="#tab'.$i.'" aria-controls="home" role="tab" data-toggle="tab">'.get_meta_data_singuler( 'nineteen_tab_'.$i).'</a></li>';
+	}
+
+	echo '</ul></div><div class="tab-content">';
+
+	for ( $i =1 ; $i < 4 ; $i++ ) {
+
+		echo '<div role="tabpanel" class="tab-pane'.($i == 1 ? ' active' : '').'" id="#tab'.$i.'">';
+		echo '<h4>'.get_meta_data_singuler( 'nineteen_tab_'.$i).'</h4>';
+		echo '<p>'.get_meta_data_singuler( 'nineteen_tab_desc_'.$i).'</p></div>';
+
+	}
+
+	echo'</div></div>';
+}
+
+
+function ninteen_patners_display( $before , $after ) {
+
+	global $post;
+
+	$patners_set = get_post_meta( get_the_ID(), 'nineteen_patners_image_1', false );
+
+	echo $before;
+
+	foreach ( $patners_set as $patners_image_id ) {
+		
+		$image_array = wp_get_attachment_image_src($patners_image_id, 'thumbnail-size', true);
+		$image_url = $image_array[0];
+
+		echo '<li><img src="'.$image_url.'" /></li>';
+	}
+
+	echo $after;
+
 }
