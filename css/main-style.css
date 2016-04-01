@@ -270,7 +270,7 @@ h1, h2, h3, h4, h5, h6 {
 .blocked-content-solution-hilglights {
 	padding-bottom: 30px;
 }
-.solution-content h3.tiny-hilghlight {
+.body-content h3.tiny-hilghlight {
 	padding: 30px;
 	clear: both;
 	border-top: 1px dashed #8da1c8;
@@ -278,7 +278,7 @@ h1, h2, h3, h4, h5, h6 {
 	background: #f3f5fa;
 	text-align: center;
 }
-.solution-content h3.tiny-hilghlight span {
+.body-content h3.tiny-hilghlight span {
 	display: block;
 	color: #4e5f7e;
 	font-size: 14px;

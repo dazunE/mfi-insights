@@ -164,6 +164,17 @@ class wp_bootstrap_navwalker extends Walker_Nav_Menu {
 }
 
 
+remove_filter( 'the_content', 'wpautop' );
+
+$br = false;
+
+add_filter( 'the_content', function( $content ) use ( $br ) { 
+
+    return wpautop( $content, $br ); 
+
+}, 10 );
+
+
 function remove_editor_from_page(){
 
   $post_id = $_GET['post'] ? $_GET['post'] : $_POST['post_ID'] ;
@@ -181,6 +192,9 @@ function remove_editor_from_page(){
 
 //add_action( 'init', 'remove_editor_from_page');
 
+
+
+/* Post Display shortcode */
 
 function ninteen_post_type_display( $atts ){
  
@@ -232,6 +246,163 @@ function ninteen_post_type_display( $atts ){
 }
 
 add_shortcode( 'data', 'ninteen_post_type_display' );
+
+/* Page Heading */
+
+function ninteen_page_heading_underline ( $atts , $content = null ) {
+
+	$atts = shortcode_atts(array(
+		"sub" => false
+	), $atts);
+
+	
+
+	return '<h3 class="header-underline-dull-blue">'.do_shortcode( $content ).'<span class="sub-text">'.$atts['sub'].'</span></h3>' ;
+
+}
+
+add_shortcode( 'heading' , 'ninteen_page_heading_underline');
+
+/* Page Highlight Heading */
+
+function ninteen_page_highlight( $atts, $content = null ) {
+
+	$atts = shortcode_atts(array(
+		"sub" => false
+	), $atts);
+
+	return '<h3 class="tiny-hilghlight">'.do_shortcode( $content ).'</h3>';
+}
+add_shortcode( 'highlight' , 'ninteen_page_highlight' );
+
+/* Page Columns Warap */
+
+function ninteen_page_row( $atts, $content = null ) {
+
+
+	return sprintf('<div class="blocked-content-solution-hilglights">%s</div>', do_shortcode( $content ));
+
+}
+
+add_shortcode( 'row' , 'ninteen_page_row' );
+
+/* Page highlight block */
+
+function ninteen_highlight_block( $atts, $content = null) {
+
+	$atts = shortcode_atts(array(
+		"heading" => false
+	), $atts);
+	return sprintf(
+		'<div class="col-md-3"><div class="highlight-solutions-inner-blocks"><h5>%s</h5>%s</div></div>',
+		$atts['heading'],
+		do_shortcode( $content )
+		);
+
+}
+
+add_shortcode( 'highlight_block' ,'ninteen_highlight_block' );
+
+/* Page bussiness module*/
+
+function ninteen_bussiness_module_wrap( $atts, $content = null ) {
+
+	$atts = shortcode_atts(array(
+		"heading" => false
+	), $atts);
+
+  return sprintf(
+  	'<div class="our-module-business-context">%s</div>',
+  	 do_shortcode( $content )
+  );
+
+}
+
+add_shortcode( 'bussiness_module' , 'ninteen_bussiness_module_wrap' );
+
+function ninteen_bussiness_module_image ( $atts, $content = null ) {
+
+	$atts = shortcode_atts( array(
+		'src'=> false), 
+	$atts );
+
+	return sprintf(
+		'<div class="module-described-img col-md-3"><img src="%s" width="210"></div>'
+		,$atts['src']);
+}
+
+add_shortcode( 'b_image' ,'ninteen_bussiness_module_image' );
+
+
+function ninteen_bussiness_accordian( $atts , $content = null ) {
+
+	 if( isset($GLOBALS['collapsibles_count']) )
+      $GLOBALS['collapsibles_count']++;
+    else
+      $GLOBALS['collapsibles_count'] = 0;
+
+  	 $id = 'accordion'. $GLOBALS['collapsibles_count'];
+  	 $class = 'panel-group';
+ 
+	 return sprintf(
+		'<div class="module-described col-md-9"><div class="%s" id="%s" role="tablist" aria-multiselectable="true">%s</div></div>',
+		$class,
+		$id,
+		do_shortcode( $content ));
+
+}
+
+add_shortcode( 'accordian', 'ninteen_bussiness_accordian');
+
+
+function ninteen_bussiness_accordian_item( $atts , $content ) {
+
+ $atts = shortcode_atts( array(
+      "title"   => false,
+      "type"    => false,
+      "active"  => false,
+      "xclass"  => false,
+      "data"    => false
+	), $atts );
+
+    $panel_class = 'panel';
+    $panel_class .= ( $atts['type'] )     ? ' panel-' . $atts['type'] : ' panel-default';
+    $panel_class .= ( $atts['xclass'] )   ? ' ' . $atts['xclass'] : '';
+      
+    $collapse_class = 'panel-collapse';
+    $collapse_class .= ( $atts['active'] == 'true' )  ? ' in' : ' collapse';
+      
+    $a_class = '';
+    $a_class .= ( $atts['active'] == 'true' )  ? '' : 'collapsed';
+
+    $parent = 'custom-collapse-'. $GLOBALS['collapsibles_count'];
+    $current_collapse = $parent . '-'. md5( $atts['title'] );
+
+    $data_props = $atts['data'] ;
+      
+    return sprintf( 
+      '<div class="%1$s"%2$s>
+        <div class="panel-heading">
+          <h4 class="panel-title">
+            <a class="%3$s" data-toggle="collapse" data-parent="#%4$s" href="#%5$s">%6$s</a>
+          </h4>
+        </div>
+        <div id="%5$s" class="%7$s">
+          <div class="panel-body">%8$s</div>
+        </div>
+      </div>',
+      esc_attr( $panel_class ),
+      ( $data_props ) ? ' ' . $data_props : '',
+      $a_class,
+      $parent,
+      $current_collapse,
+      $atts['title'],
+      esc_attr( $collapse_class ),
+      do_shortcode( $content )
+    );
+}
+
+add_shortcode('item' , 'ninteen_bussiness_accordian_item' );
 
 
 function get_meta_data_singuler($meta_key) {

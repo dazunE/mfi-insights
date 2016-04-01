@@ -163,10 +163,10 @@ function mfi_insights_widgets_init() {
 		'name'          => esc_html__( 'Sidebar', 'mfi-insights' ),
 		'id'            => 'sidebar-1',
 		'description'   => '',
-		'before_widget' => '<section id="%1$s" class="widget %2$s">',
-		'after_widget'  => '</section>',
-		'before_title'  => '<h2 class="widget-title">',
-		'after_title'   => '</h2>',
+		'before_widget' => '<div class="col-md-4"><div class="inner-wrap">',
+		'after_widget'  => '</div></div>',
+		'before_title'  => '<h5 class="widget-title">',
+		'after_title'   => '</h5>',
 	) );
 }
 add_action( 'widgets_init', 'mfi_insights_widgets_init' );
