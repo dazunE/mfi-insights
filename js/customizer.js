@@ -20,6 +20,13 @@
 		} );
 	} );
 
+	wp.customize('ninteen_theme_header_logo' , function ( value ) {
+		value.bind( function ( to ) {
+			$('.imf-logo img').attr(to);
+		} );
+
+	} );
+
 	// Header text color.
 	wp.customize( 'header_textcolor', function( value ) {
 		value.bind( function( to ) {

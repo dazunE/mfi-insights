@@ -11,9 +11,41 @@
  * @param WP_Customize_Manager $wp_customize Theme Customizer object.
  */
 function mfi_insights_customize_register( $wp_customize ) {
+
+	$wp_customize->add_section( 
+		'ninteen_theme_header_customization',
+		array( 
+			'title' => 'Header Section',
+			'priority' => 30
+	 ) );
+
+	$wp_customize->add_setting(
+
+		'ninteen_theme_header_logo',
+		array(
+				'default' => 'logo.png',
+				'transport' => 'postMessage'
+			)
+
+	);
+
+	$wp_customize->add_control(
+
+		'ninteen_theme_header_logo',
+		array(
+			'section' => 'title_tagline',
+			'label'  => 'Site Logo',
+			'type'  => 'text')
+	);
+
 	$wp_customize->get_setting( 'blogname' )->transport         = 'postMessage';
 	$wp_customize->get_setting( 'blogdescription' )->transport  = 'postMessage';
 	$wp_customize->get_setting( 'header_textcolor' )->transport = 'postMessage';
+
+	$wp_customize->remove_control( 'blogdescription' );
+	$wp_customize->remove_control( 'header_textcolor' );
+	$wp_customize->remove_control( 'header_image' );
+
 }
 add_action( 'customize_register', 'mfi_insights_customize_register' );
 
