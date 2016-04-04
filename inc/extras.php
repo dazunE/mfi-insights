@@ -223,7 +223,7 @@ function ninteen_post_type_display( $atts ){
 
 		if($atts['type'] == 'team') {
 
-		echo '<div class="our-team container"><div class="analytics-team-details">';
+		echo '<div class="our-team container"><div class="analytics-team-details row">';
 
 		}
 
@@ -238,7 +238,7 @@ function ninteen_post_type_display( $atts ){
 
 		if($atts['type'] == 'team') {
 
-		echo '</div></div>';
+		echo '</div><div class="member-description load-description"></div></div>';
 
 		}
 

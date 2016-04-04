@@ -52,8 +52,12 @@
     $('.member-readmore').click(function(){
         $('.member-description').removeClass('active');
         $('.member-readmore').removeClass('active');
+        $('.load-description').empty();
         $(this).addClass('active');
-        $(this).parent().next('div').addClass('active');
+         $('.load-description').addClass('active');
+        var content = $(this).parent().next('div').html();
+        $('.load-description').append(content);
+
     });
 
    $('.featured-tabs a').click(function (e) {
