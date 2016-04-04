@@ -447,7 +447,7 @@ function ninteen_slider_display($before, $after){
 
 	echo '<li class="animate-in slider-set-'.$i.'">';
 	echo '<div class="info"><h2>'.get_meta_data_singuler( 'nineteen_slider_'.$i ).'</h2>';
-	echo '<p>'.get_meta_data_singuler( 'nineteen_slider_'.$i ).'</p></div>';
+	echo '<p>'.get_meta_data_singuler( 'nineteen_slider_caption_'.$i ).'</p></div>';
 	echo '<img class="sky" src="'.get_meta_image('nineteen_slider_image_'.$i).'" alt="Blue Sky" />';
 	echo '<img class="balloon" src="'.get_meta_image('nineteen_slider_banner_image_'.$i).'" alt="Balloon"/>';
 	echo '</li>';
