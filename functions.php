@@ -198,6 +198,12 @@ require get_template_directory() . '/inc/customizer.php';
 include get_template_directory().'/inc/meta-box.php';
 
 /**
+ * Custom Widget
+ */
+
+include get_template_directory().'/inc/widgets.php';
+
+/**
  * Load Jetpack compatibility file.
  */
 require get_template_directory() . '/inc/jetpack.php';
