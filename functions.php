@@ -202,3 +202,9 @@ include get_template_directory().'/inc/meta-box.php';
  */
 require get_template_directory() . '/inc/jetpack.php';
 
+/**
+ * Widgets
+ */
+
+require get_template_directory().'/inc/widgets.php';
+
