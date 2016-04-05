@@ -26,7 +26,9 @@
   </div>
   <div class="header-bottom">
     <div class="container">
-      <div class="col-md-3 visible-md visible-lg imf-logo"> <img src="<?php print IMAGES; ?>/mfi-logo.png" class="img-responsive" /> </div>
+      <div class="col-md-3 visible-md visible-lg imf-logo">
+        <?php mfi_site_logo();?>
+        </div>
       <div class="col-md-9 col-xs-12"> 
       
       <nav class="navbar mfi-menu">
@@ -39,7 +41,9 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-        <a class="navbar-brand" href="#"> <img src="images/mfi-logo.png" class="img-responsive" /></a>
+        <a class="navbar-brand" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
+         <?php mfi_site_logo();?>
+        </a>
     </div>
 
 
@@ -67,9 +71,6 @@
 
 <div class="mobile-header-welcome visible-xs visible-sm">
 
- <div class="info">
- <h2>The Proven Leader in Analytics</h2>
- <p>MFI- Insight Analytics is powered by INES-IT.sprl (INtegrated & Efficient Solutions - IT), which is a Belgium based consultancy company. We deliver high quality BI and analytics solutions and services to financial institutions and specially Microfinance Institutions in order to improve their operational performance and increase probabilities of sustainability. </p>
-  </div>
+<?php  mfi_responsive_header_display() ;?>
   
 </div>

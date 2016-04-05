@@ -26,7 +26,45 @@ function mfi_insights_body_classes( $classes ) {
 
 	return $classes;
 }
+
 add_filter( 'body_class', 'mfi_insights_body_classes' );
+
+
+/*
+* Site Logo
+*/
+function mfi_site_logo() {
+
+	if( '' != get_theme_mod('ninteen_theme_header_logo' )) {
+
+		echo '<img src="'.get_theme_mod('ninteen_theme_header_logo' ).'" class="img-responsive" />';
+	}
+
+	else{
+
+		echo '<img src="'.IMAGES.'mfi-logo.png" class="img-responsive" />';
+	}
+
+}
+
+function mfi_responsive_header_display() {
+
+	echo '<div class="info">';
+
+    if( '' != get_theme_mod('ninteen_theme_header_title' )) {
+
+    	echo '<h2>'.get_theme_mod('ninteen_theme_header_title' ).'</h2>';
+    }
+
+    if ( '' != get_theme_mod('ninteen_theme_header_description' )){
+
+    	echo '<p>'.get_theme_mod('ninteen_theme_header_description' ).'</p>';
+    }
+
+    echo '</div>';
+
+}
+
 
 
 class wp_bootstrap_navwalker extends Walker_Nav_Menu {

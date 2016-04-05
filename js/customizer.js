@@ -22,10 +22,29 @@
 
 	wp.customize('ninteen_theme_header_logo' , function ( value ) {
 		value.bind( function ( to ) {
-			$('.imf-logo img').attr(to);
+			$('.imf-logo img').attr('src', to);
 		} );
 
 	} );
+
+	wp.customize( 'ninteen_theme_header_title' , function ( value ) {
+
+		value.bind( function( to ) {
+			$('.mobile-header-welcome .info h2').html(to);
+		});
+
+	} );
+
+
+	wp.customize( 'ninteen_theme_header_description' , function ( value ) {
+
+		value.bind( function( to ) {
+			$('.mobile-header-welcome .info p').html(to);
+		});
+
+	} );
+
+
 
 	// Header text color.
 	wp.customize( 'header_textcolor', function( value ) {
