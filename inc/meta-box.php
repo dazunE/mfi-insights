@@ -204,6 +204,72 @@ $meta_boxes[] = array(
 				'cols' => 20,
 				'rows' => 2,
 			),
+
+			array(
+				'name'  => __( 'Value Title', 'ninteen-options' ),
+				'id'    => "{$prefix}value_title_3",
+				'type'  => 'text',
+				'std'   => __( 'Title', 'ninteen-options' ),
+			),
+
+			array(
+				'name'             => __( 'Image', 'ninteen-options' ),
+				'id'               => "{$prefix}value_image_3",
+				'type'             => 'image_advanced',
+				'max_file_uploads' => 1,
+			),
+
+			array(
+				'name'    => __( 'Capation', 'your-prefix' ),
+				'id'      => "{$prefix}value_description_3",
+				'type' => 'textarea',
+				'cols' => 20,
+				'rows' => 2,
+			),
+
+			array(
+				'name'  => __( 'Value Title', 'ninteen-options' ),
+				'id'    => "{$prefix}value_title_3",
+				'type'  => 'text',
+				'std'   => __( 'Title', 'ninteen-options' ),
+			),
+
+			array(
+				'name'             => __( 'Image', 'ninteen-options' ),
+				'id'               => "{$prefix}value_image_3",
+				'type'             => 'image_advanced',
+				'max_file_uploads' => 1,
+			),
+
+			array(
+				'name'    => __( 'Capation', 'your-prefix' ),
+				'id'      => "{$prefix}value_description_3",
+				'type' => 'textarea',
+				'cols' => 20,
+				'rows' => 2,
+			),
+
+			array(
+				'name'  => __( 'Value Title', 'ninteen-options' ),
+				'id'    => "{$prefix}value_title_4",
+				'type'  => 'text',
+				'std'   => __( 'Title', 'ninteen-options' ),
+			),
+
+			array(
+				'name'             => __( 'Image', 'ninteen-options' ),
+				'id'               => "{$prefix}value_image_4",
+				'type'             => 'image_advanced',
+				'max_file_uploads' => 1,
+			),
+
+			array(
+				'name'    => __( 'Capation', 'your-prefix' ),
+				'id'      => "{$prefix}value_description_4",
+				'type' => 'textarea',
+				'cols' => 20,
+				'rows' => 2,
+			),
 		) ,
 
 	'only_on'    => array(
